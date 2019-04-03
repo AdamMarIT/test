@@ -5,7 +5,8 @@
 	
 	//is login?
 	if(empty($_SESSION['name'])){
-		include_once("login.php");
+		//var_dump($_SESSION['name']);
+		include("login.php");    // ??????????? при неправильно введеном логине include_once не работает
 		$_SESSION['user_id'] = 0;
 	} else{
 		echo "Привет, ".$_SESSION['name']." <a href='/logout.php'>Выйти</a>";	

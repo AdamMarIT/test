@@ -11,10 +11,16 @@
 		if (!empty($userId)) {
 			$_SESSION['name'] = $_POST['name'];
 			$_SESSION['user_id'] = $userId;
+			include_once("index.php");
+
 		} else {
-			echo "Вы ввели неверный данные!";
+			include_once("index.php");
+			echo "Вы ввели неверные данные!";
+			//$_SESSION['name'] = 0;
+			
 		}
 	}
+
     
     require_once(dirname(__FILE__)."/views/login_page.php");
 

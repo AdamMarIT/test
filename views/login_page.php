@@ -10,11 +10,11 @@
 <body>
     <div align="right">
         <h1>Вход:</h1>
-        <form method="post" action="<?php echo SITE_URL.'/index.php';?>">
+        <form method="post" action="<?php echo SITE_URL.'/login.php';?>">
             <p><label>Логин:<br>
             <input type="text" required value="<?php echo $name;?>" name="name"> </label></p> 
             <p><label>Пароль:<br>
-            <input type="password" name="password"></label></p>
+            <input type="password" required name="password"></label></p>
             <p><input name="login" type= "submit" value="Войти"></p>
             <p><a href="<?php echo SITE_URL.'/registration.php';?>"> Регистрация </a></p>
         </form>
