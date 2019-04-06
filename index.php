@@ -6,12 +6,17 @@
 	//is login?
 	if(empty($_SESSION['name'])){
 		//var_dump($_SESSION['name']);
-		include("login.php");    // ??????????? при неправильно введеном логине include_once не работает
+		if (!empty($_SESSION['wrongAutoriz'])) {
+			$_SESSION['wrongAutoriz'] = 0;
+			echo "<div align='right'>Вы ввели неверные данные!</div>";
+		}
+		include_once("login.php");   
 		$_SESSION['user_id'] = 0;
+		
 	} else{
 		echo "Привет, ".$_SESSION['name']." <a href='/logout.php'>Выйти</a>";	
 	}
-
+	
     //отображаем товары с возможносью добавить в корзину
 	$productsIntoCart = 0;
 	$products = getAllProducts($pdo);
