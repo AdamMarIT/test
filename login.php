@@ -6,7 +6,7 @@
 	
 	if(!empty($_POST['name']) && !empty($_POST['password'])){
 		$password = sha1($_POST['password'].'SALT');
-		$userId = logIN($pdo, $_POST['name'], $password); // checkLogin
+		$userId = checkLogin($pdo, $_POST['name'], $password); 
         
 		if (!empty($userId)) {
 			$_SESSION['name'] = $_POST['name'];
